@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Metal Tags & Asset Labels | Laser Engraved Tags – NBNE</title>
+    <meta name="description" content="Custom metal tags and serialised asset labels manufactured in Northumberland. Aluminium, stainless, brass and copper tags with QR codes and serial numbers. Batch runs from ~£1.50 per tag.">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 100px 20px 60px;
+            text-align: center;
+        }
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .service-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        .breadcrumb {
+            padding: 20px;
+            background: #f9fafb;
+            font-size: 0.875rem;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .content-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .content-main h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+        .content-main h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #374151;
+        }
+        .content-main p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        .content-main ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .content-main ul li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            font-size: 1.125rem;
+            color: #4b5563;
+        }
+        .content-main ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-box {
+            background: #f9fafb;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .feature-box h4 {
+            font-size: 1.125rem;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+        .feature-box p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin: 0;
+        }
+        .case-study {
+            background: #eff6ff;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid #3b82f6;
+        }
+        .case-study h3 {
+            color: #1e3a8a;
+            margin-top: 0;
+        }
+        .pricing-box {
+            background: #f0fdf4;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #10b981;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .pricing-box .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #059669;
+            margin: 10px 0;
+        }
+        .pricing-box .price-note {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cta-box h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .cta-box p {
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        .cta-box .btn {
+            background: white;
+            color: #1e3a8a;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .cta-box .btn:hover {
+            transform: translateY(-2px);
+        }
+        .info-box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .info-box h4 {
+            margin-top: 0;
+            color: #1f2937;
+            font-size: 1.125rem;
+        }
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-box ul li {
+            padding: 8px 0;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        .faq-section {
+            margin-top: 50px;
+        }
+        .faq-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .faq-item h4 {
+            color: #1f2937;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.125rem;
+        }
+        .faq-item p {
+            color: #6b7280;
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="../index.html"><img src="../assets/FULL LOGO.svg" alt="NBNE Print & Sign" class="logo"></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#portfolio">Portfolio</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../index.html#contact" class="nav-cta">Get a Quote</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../index.html#services">Services</a> / <span>Industrial Metal Tags & Asset Labels</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>Industrial Metal Tags & Serialised Asset Labels</h1>
+            <p>Batch production of laser-engraved metal tags with QR codes, barcodes and sequential numbering. Manufactured in Alnwick for UK-wide supply.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="content-grid">
+            <div class="content-main">
+                <h2>Batch Production of Industrial Metal Tags</h2>
+                <p>NBNE manufactures metal tags and asset labels for facilities managers, engineers and manufacturers. We handle batch runs from 100 to 10,000+ tags with laser engraving, QR codes, barcodes and sequential numbering.</p>
+                
+                <p>Tags are CNC-cut from aluminium, stainless steel, brass or copper. We work from your data (CSV or spreadsheet) to encode unique information on each tag. Typical applications include asset tracking, machinery labels, valve tags and donor recognition.</p>
+
+                <p>Manufactured in-house at our Alnwick workshop with UK-wide delivery.</p>
+
+                <h2>Materials & Finishes</h2>
+                <p>We manufacture metal tags from a range of durable materials suited to different applications:</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4>Aluminium</h4>
+                        <p>Lightweight, corrosion-resistant, ideal for indoor and outdoor use. Most popular choice for asset labels.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Stainless Steel</h4>
+                        <p>Heavy-duty, highly durable, suitable for extreme environments and high-wear applications.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Brass</h4>
+                        <p>Premium finish with natural patina over time. Perfect for heritage, marine, and decorative tags.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Copper</h4>
+                        <p>Antimicrobial properties, distinctive appearance, ideal for specialist industrial applications.</p>
+                    </div>
+                </div>
+
+                <h2>Manufacturing Processes</h2>
+                <p>All metal tags are produced in-house at our Alnwick facility using advanced manufacturing equipment:</p>
+                
+                <ul>
+                    <li><strong>CNC Cutting</strong> – Precision cutting to custom shapes and sizes with clean edges</li>
+                    <li><strong>Laser Engraving</strong> – Permanent, high-contrast marking that won't fade or wear off</li>
+                    <li><strong>UV Printing</strong> – Full-colour graphics, logos, and variable data printing</li>
+                    <li><strong>Drilling & Fixing</strong> – Pre-drilled holes, adhesive backing, or rivet options available</li>
+                </ul>
+
+                <h2>Serialisation, QR Codes & Barcodes</h2>
+                <p>We encode data from your spreadsheet or CSV file onto each tag:</p>
+                <ul>
+                    <li>Sequential numbering (001, 002, 003... or custom formats)</li>
+                    <li>QR codes linking to asset management systems</li>
+                    <li>Barcodes for scanning and tracking</li>
+                    <li>Variable data (names, dates, locations, unique IDs)</li>
+                </ul>
+
+                <h2>Materials & Sizes</h2>
+                <p>Standard materials: aluminium (60 x 30mm x 2mm typical), stainless steel, brass, copper. Custom shapes CNC-cut to your specification.</p>
+
+                <h2>Pricing & Batch Runs</h2>
+                <div class="pricing-box">
+                    <h3>Example Pricing</h3>
+                    <div class="price">From around £1.50 per tag</div>
+                    <p class="price-note">Based on a 1,500-piece aluminium QR tag run (60 x 30mm x 2mm). Smaller runs available. Low design overhead, repeatability and in-house production.</p>
+                </div>
+
+                <div class="case-study">
+                    <h3>Case Study: Facilities Management Asset Tagging</h3>
+                    <p><strong>Client:</strong> Regional facilities management contractor</p>
+                    <p><strong>Requirement:</strong> 2,500 serialised aluminium asset labels with QR codes for equipment tracking across multiple sites</p>
+                    <p><strong>Solution:</strong> We produced 50mm x 25mm brushed aluminium tags with laser-engraved sequential numbers and UV-printed QR codes. Each tag was pre-drilled and supplied with stainless steel rivets for permanent fixing.</p>
+                    <p><strong>Result:</strong> Full batch delivered within 5 working days. Client reported improved asset visibility and streamlined maintenance scheduling using QR code scanning integration with their CMMS software.</p>
+                </div>
+
+                <h2>Typical Applications</h2>
+                <ul>
+                    <li>Asset tracking tags for facilities and engineering</li>
+                    <li>Machinery & plant labels with serial numbers</li>
+                    <li>Valve tags and panel ID tags</li>
+                    <li>Fundraising / donor leaves (e.g. copper sycamore leaves for recognition walls)</li>
+                </ul>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <h4>What is the minimum order quantity?</h4>
+                        <p>We can produce small batches from as few as 10 tags, but pricing becomes more competitive at higher volumes (100+, 500+, 1,000+). Contact us with your requirements for a tailored quote.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How long does production take?</h4>
+                        <p>Standard turnaround is 5-7 working days for most orders. Urgent production is available for an additional fee. Large batches (5,000+) may require 10-14 days.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can you match our existing tag design?</h4>
+                        <p>Yes. Send us a photo or sample of your current tags and we can replicate the design, dimensions, and finish. We can also improve durability or add new features like QR codes.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do you offer design services?</h4>
+                        <p>Absolutely. Our in-house design team can create professional tag layouts, incorporate your branding, and optimise for readability and durability. Design service is included for larger orders.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What fixing options are available?</h4>
+                        <p>We offer pre-drilled holes (with or without countersinking), adhesive backing (permanent or removable), cable tie slots, and rivet supply. Let us know your preferred fixing method when requesting a quote.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can tags be supplied with sequential numbering?</h4>
+                        <p>Yes. We can laser engrave or UV print sequential numbers, alphanumeric codes, or custom serialisation formats. This is ideal for asset tracking and inventory management.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Are your metal tags suitable for outdoor use?</h4>
+                        <p>Yes. Aluminium and stainless steel tags are highly weather-resistant. Laser engraving provides permanent marking that won't fade in sunlight or wash off in rain. UV printing can be laminated for additional protection if required.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <h2>Ready to Order Your Metal Tags?</h2>
+                    <p style="font-size: 1.125rem; color: #6b7280;">Get a detailed quote for your batch order</p>
+                    <a href="../index.html#contact" class="btn btn-primary" style="display: inline-block; margin-top: 20px; padding: 16px 48px; background: #3b82f6; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Request a Batch Quote</a>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="cta-box">
+                    <h3>Request a Quote</h3>
+                    <p>Get batch pricing for your metal tag order</p>
+                    <a href="../index.html#contact" class="btn">Contact Us</a>
+                </div>
+
+                <div class="info-box">
+                    <h4>Quick Facts</h4>
+                    <ul>
+                        <li>✓ UK manufacturer</li>
+                        <li>✓ In-house production</li>
+                        <li>✓ 5-7 day turnaround</li>
+                        <li>✓ From £1.50 per tag (1,000+)</li>
+                        <li>✓ Sequential numbering</li>
+                        <li>✓ QR codes & barcodes</li>
+                        <li>✓ Custom shapes & sizes</li>
+                        <li>✓ Free design service</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Related Services</h4>
+                    <ul>
+                        <li><a href="cnc-cutting-service.html" style="color: #3b82f6; text-decoration: none;">CNC Cutting Service</a></li>
+                        <li><a href="acrylic-panels-cut-to-size.html" style="color: #3b82f6; text-decoration: none;">Acrylic Panels</a></li>
+                        <li><a href="../index.html#services" style="color: #3b82f6; text-decoration: none;">All Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Coverage Area</h4>
+                    <ul>
+                        <li>Alnwick</li>
+                        <li>Morpeth</li>
+                        <li>Amble</li>
+                        <li>Rothbury</li>
+                        <li>Ashington</li>
+                        <li>Newcastle</li>
+                        <li>UK-wide delivery</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #1f2937; color: white; padding: 40px 20px; text-align: center;">
+        <div class="container">
+            <p><strong>NBNE Print & Sign</strong> | Northumberland's Commercial Signage Specialists</p>
+            <p style="margin-top: 10px;">
+                📧 <a href="mailto:hello@northbynortheast.co.uk" style="color: white; text-decoration: none;">hello@northbynortheast.co.uk</a> &nbsp;•&nbsp;
+                📞 <a href="tel:+441665606741" style="color: white; text-decoration: none;">01665 606 741</a> &nbsp;•&nbsp;
+                🌐 <a href="https://nbnesigns.co.uk" target="_blank" style="color: white; text-decoration: none;">nbnesigns.co.uk</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.875rem; opacity: 0.8;">
+                <a href="../index.html" style="color: white; text-decoration: none;">Home</a> | 
+                <a href="../index.html#services" style="color: white; text-decoration: none;">Services</a> | 
+                <a href="../index.html#contact" style="color: white; text-decoration: none;">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!-- NBNE Signage Assessment Quiz Widget -->
+<!-- Add this to signage service pages (NOT manufacturing pages) -->
+
+<style>
+/* Quiz Floating Button */
+.quiz-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+    color: white;
+    padding: 18px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    cursor: pointer;
+    border: none;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quiz-float-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+}
+
+.quiz-float-btn .icon {
+    font-size: 1.3rem;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 10px 40px rgba(59, 130, 246, 0.6);
+    }
+}
+
+/* Quiz Modal Overlay */
+.quiz-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.quiz-modal-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Quiz Modal */
+.quiz-modal {
+    background: white;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Quiz Header */
+.quiz-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+}
+
+.quiz-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.quiz-header h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+}
+
+.quiz-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+/* Progress Bar */
+.quiz-progress {
+    background: rgba(255, 255, 255, 0.2);
+    height: 8px;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    background: white;
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+    border-radius: 10px;
+}
+
+/* Quiz Body */
+.quiz-body {
+    padding: 40px;
+}
+
+.quiz-question {
+    display: none;
+}
+
+.quiz-question.active {
+    display: block;
+    animation: fadeInQuestion 0.4s ease;
+}
+
+@keyframes fadeInQuestion {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.quiz-question h3 {
+    font-size: 1.4rem;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.quiz-question p {
+    color: #6b7280;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.quiz-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quiz-option {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.quiz-option:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+    transform: translateY(-2px);
+}
+
+.quiz-option.selected {
+    border-color: #3b82f6;
+    background: #3b82f6;
+    color: white;
+}
+
+/* Quiz Navigation */
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.quiz-btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-btn-primary {
+    background: #3b82f6;
+    color: white;
+    flex: 1;
+}
+
+.quiz-btn-primary:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.quiz-btn-primary:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.quiz-btn-secondary {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.quiz-btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+/* Quiz Results */
+.quiz-results {
+    display: none;
+    text-align: center;
+}
+
+.quiz-results.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.quiz-score {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #3b82f6;
+    margin: 20px 0;
+}
+
+.quiz-score-label {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.quiz-recommendations {
+    text-align: left;
+    background: #f9fafb;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.quiz-recommendations h4 {
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+.quiz-recommendations ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-recommendations li {
+    padding: 10px 0;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.quiz-recommendations li:last-child {
+    border-bottom: none;
+}
+
+.quiz-recommendations li:before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .quiz-float-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .quiz-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .quiz-header {
+        padding: 25px 20px;
+    }
+    
+    .quiz-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .quiz-body {
+        padding: 25px 20px;
+    }
+    
+    .quiz-options {
+        flex-direction: column;
+    }
+    
+    .quiz-score {
+        font-size: 3rem;
+    }
+}
+</style>
+
+<!-- Quiz Floating Button -->
+<button class="quiz-float-btn" id="quizFloatBtn">
+    <span class="icon">📊</span>
+    <span>Free Signage Assessment</span>
+</button>
+
+<!-- Quiz Modal -->
+<div class="quiz-modal-overlay" id="quizModal">
+    <div class="quiz-modal">
+        <!-- Header -->
+        <div class="quiz-header">
+            <button class="quiz-close" id="quizClose">&times;</button>
+            <h2>Signage Effectiveness Assessment</h2>
+            <p>Discover how well your signage is working and get personalized recommendations</p>
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="quizProgress"></div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="quiz-body">
+            <!-- Question 1 -->
+            <div class="quiz-question active" data-question="1">
+                <h3>Do you have clear, visible signage that identifies your business from the street?</h3>
+                <p>Visible identification is the foundation of attracting walk-in customers</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" data-question="2">
+                <h3>Is your signage professionally designed and consistent with your brand?</h3>
+                <p>Professional design builds trust and credibility with potential customers</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" data-question="3">
+                <h3>Is your signage well-lit and visible during evening hours?</h3>
+                <p>Illuminated signage extends your visibility and captures evening traffic</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-question" data-question="4">
+                <h3>Do you have window displays or graphics that showcase your products/services?</h3>
+                <p>Window displays turn your storefront into a 24/7 marketing tool</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question" data-question="5">
+                <h3>Do you have directional or wayfinding signage to guide customers to your location?</h3>
+                <p>A-frames and directional signs capture passing foot traffic</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="quiz-question" data-question="6">
+                <h3>Is your signage in good condition (no fading, damage, or outdated information)?</h3>
+                <p>Well-maintained signage reflects the quality of your business</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="quiz-question" data-question="7">
+                <h3>Do you have vehicle graphics or signage on company vehicles?</h3>
+                <p>Vehicle graphics turn every journey into mobile advertising</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="quiz-question" data-question="8">
+                <h3>Do you have signage that communicates your key services or products?</h3>
+                <p>Clear messaging helps customers understand what you offer instantly</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="quiz-question" data-question="9">
+                <h3>Have you obtained necessary planning permissions for your signage?</h3>
+                <p>Proper permissions ensure your signage is compliant and permanent</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="quiz-question" data-question="10">
+                <h3>Do you regularly update promotional signage for offers, events, or seasonal campaigns?</h3>
+                <p>Fresh promotional signage keeps your business relevant and engaging</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-value="yes">✓ Yes</div>
+                    <div class="quiz-option" data-value="no">✗ No</div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="quiz-results" id="quizResults">
+                <h2>Your Signage Effectiveness Score</h2>
+                <div class="quiz-score" id="quizScore">0/10</div>
+                <div class="quiz-score-label" id="quizScoreLabel">Excellent!</div>
+                
+                <div class="quiz-recommendations">
+                    <h4>Your Biggest Opportunities:</h4>
+                    <ul id="quizRecommendations"></ul>
+                </div>
+
+                <p style="margin: 30px 0; color: #6b7280;">Ready to improve your signage effectiveness?</p>
+                <a href="#contact" class="quiz-btn quiz-btn-primary" style="display: inline-block; text-decoration: none;">Book a Free Site Survey</a>
+            </div>
+
+            <!-- Navigation -->
+            <div class="quiz-nav" id="quizNav">
+                <button class="quiz-btn quiz-btn-secondary" id="quizPrev" style="display: none;">← Previous</button>
+                <button class="quiz-btn quiz-btn-primary" id="quizNext" disabled>Next →</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Quiz Logic
+(function() {
+    const totalQuestions = 10;
+    let currentQuestion = 1;
+    let answers = {};
+    
+    const modal = document.getElementById('quizModal');
+    const floatBtn = document.getElementById('quizFloatBtn');
+    const closeBtn = document.getElementById('quizClose');
+    const prevBtn = document.getElementById('quizPrev');
+    const nextBtn = document.getElementById('quizNext');
+    const progressBar = document.getElementById('quizProgress');
+    
+    // Open modal
+    floatBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Close modal
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Handle option selection
+    document.querySelectorAll('.quiz-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const question = this.closest('.quiz-question');
+            const questionNum = question.dataset.question;
+            
+            // Remove selected from siblings
+            question.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected to clicked option
+            this.classList.add('selected');
+            
+            // Store answer
+            answers[questionNum] = this.dataset.value;
+            
+            // Enable next button
+            nextBtn.disabled = false;
+        });
+    });
+    
+    // Next button
+    nextBtn.addEventListener('click', () => {
+        if (currentQuestion < totalQuestions) {
+            currentQuestion++;
+            showQuestion(currentQuestion);
+            updateProgress();
+            updateNavigation();
+        } else {
+            showResults();
+        }
+    });
+    
+    // Previous button
+    prevBtn.addEventListener('click', () => {
+        if (currentQuestion > 1) {
+            currentQuestion--;
+            showQuestion(currentQuestion);
+            updateProgress();
+            updateNavigation();
+        }
+    });
+    
+    function showQuestion(num) {
+        document.querySelectorAll('.quiz-question').forEach(q => {
+            q.classList.remove('active');
+        });
+        document.querySelector(`[data-question="${num}"]`).classList.add('active');
+        
+        // Check if this question has been answered
+        if (answers[num]) {
+            nextBtn.disabled = false;
+            // Re-select the option
+            const selectedValue = answers[num];
+            document.querySelector(`[data-question="${num}"] [data-value="${selectedValue}"]`).classList.add('selected');
+        } else {
+            nextBtn.disabled = true;
+        }
+    }
+    
+    function updateProgress() {
+        const progress = (currentQuestion / totalQuestions) * 100;
+        progressBar.style.width = progress + '%';
+    }
+    
+    function updateNavigation() {
+        prevBtn.style.display = currentQuestion > 1 ? 'block' : 'none';
+        nextBtn.textContent = currentQuestion === totalQuestions ? 'See Results →' : 'Next →';
+    }
+    
+    function showResults() {
+        // Calculate score
+        const yesCount = Object.values(answers).filter(a => a === 'yes').length;
+        const score = yesCount;
+        
+        // Hide questions and nav
+        document.querySelectorAll('.quiz-question').forEach(q => q.style.display = 'none');
+        document.getElementById('quizNav').style.display = 'none';
+        
+        // Show results
+        const resultsDiv = document.getElementById('quizResults');
+        resultsDiv.classList.add('active');
+        
+        // Update score
+        document.getElementById('quizScore').textContent = score + '/10';
+        
+        // Update label
+        let label = '';
+        if (score >= 8) label = 'Excellent! Your signage is working well.';
+        else if (score >= 6) label = 'Good! Some room for improvement.';
+        else if (score >= 4) label = 'Fair. Several opportunities to improve.';
+        else label = 'Significant opportunities for improvement.';
+        
+        document.getElementById('quizScoreLabel').textContent = label;
+        
+        // Generate recommendations
+        const recommendations = [];
+        if (answers['1'] === 'no') recommendations.push('Add clear shopfront signage for street visibility');
+        if (answers['2'] === 'no') recommendations.push('Invest in professional signage design');
+        if (answers['3'] === 'no') recommendations.push('Install illuminated signage for 24/7 visibility');
+        if (answers['4'] === 'no') recommendations.push('Add window graphics to showcase your offerings');
+        if (answers['5'] === 'no') recommendations.push('Install directional signage to guide customers');
+        if (answers['6'] === 'no') recommendations.push('Refresh or replace damaged/faded signage');
+        if (answers['7'] === 'no') recommendations.push('Add vehicle graphics for mobile advertising');
+        if (answers['8'] === 'no') recommendations.push('Improve messaging to communicate your services');
+        if (answers['9'] === 'no') recommendations.push('Obtain planning permissions for compliant signage');
+        if (answers['10'] === 'no') recommendations.push('Implement regular promotional signage updates');
+        
+        const recList = document.getElementById('quizRecommendations');
+        recList.innerHTML = '';
+        recommendations.forEach(rec => {
+            const li = document.createElement('li');
+            li.textContent = rec;
+            recList.appendChild(li);
+        });
+        
+        if (recommendations.length === 0) {
+            recList.innerHTML = '<li>Your signage strategy is comprehensive! Consider periodic refreshes to stay current.</li>';
+        }
+    }
+})();
+</script>

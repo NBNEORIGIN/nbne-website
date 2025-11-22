@@ -1,0 +1,49 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/work examples"
+public_folder: "../assets/work examples"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "index.html"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Hero Heading", name: "hero_heading", widget: "string"}
+          - {label: "Hero Description", name: "hero_description", widget: "text"}
+          - {label: "Phone Number", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Address Line 1", name: "address_1", widget: "string"}
+          - {label: "Address Line 2", name: "address_2", widget: "string"}
+          
+  - name: "services"
+    label: "Service Pages"
+    folder: "services"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "Service Name", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Hero Image", name: "hero_image", widget: "image", required: false}
+      - {label: "Content", name: "body", widget: "markdown"}
+      
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Contact Information"
+        name: "contact"
+        file: "admin/contact.json"
+        fields:
+          - {label: "Business Name", name: "business_name", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Address Line 1", name: "address_1", widget: "string"}
+          - {label: "Address Line 2", name: "address_2", widget: "string"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+          - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false}

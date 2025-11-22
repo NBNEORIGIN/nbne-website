@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNC Cutting Service Alnwick | Precision Cutting Northumberland | NBNE</title>
+    <meta name="description" content="Professional CNC cutting service in Alnwick, Northumberland. Precision cutting of aluminium, acrylic, wood, MDF, and composite panels. Fast turnaround for commercial clients across the North East.">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .service-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 100px 20px 60px;
+            text-align: center;
+        }
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .service-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        .breadcrumb {
+            padding: 20px;
+            background: #f9fafb;
+            font-size: 0.875rem;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .content-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .content-main h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+        .content-main h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #374151;
+        }
+        .content-main p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        .content-main ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .content-main ul li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            font-size: 1.125rem;
+            color: #4b5563;
+        }
+        .content-main ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-box {
+            background: #f9fafb;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .feature-box h4 {
+            font-size: 1.125rem;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+        .feature-box p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin: 0;
+        }
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cta-box h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .cta-box p {
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        .cta-box .btn {
+            background: white;
+            color: #1e3a8a;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .cta-box .btn:hover {
+            transform: translateY(-2px);
+        }
+        .info-box {
+            background: white;
+            border: 2px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .info-box h4 {
+            margin-top: 0;
+            color: #1f2937;
+            font-size: 1.125rem;
+        }
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-box ul li {
+            padding: 8px 0;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        .faq-section {
+            margin-top: 50px;
+        }
+        .faq-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .faq-item h4 {
+            color: #1f2937;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.125rem;
+        }
+        .faq-item p {
+            color: #6b7280;
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="../index.html"><img src="../assets/FULL LOGO.svg" alt="NBNE Print & Sign" class="logo"></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#portfolio">Portfolio</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <a href="../index.html#contact" class="nav-cta">Get a Quote</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <a href="../index.html#services">Services</a> / <span>CNC Cutting Service</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>CNC Cutting Service in Alnwick, Northumberland</h1>
+            <p>Precision CNC routing and cutting for signage, displays, and custom fabrication projects across the North East</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="content-grid">
+            <div class="content-main">
+                <h2>Professional CNC Cutting in Northumberland</h2>
+                <p>NBNE Print & Sign operates advanced CNC routing equipment at our Alnwick facility, providing precision cutting services for commercial clients across Northumberland and the North East. Our CNC cutting service delivers accurate, repeatable results for signage manufacturing, display fabrication, and custom panel cutting.</p>
+                
+                <p>Whether you need a single prototype or a production run of hundreds, our in-house CNC capability ensures fast turnaround, competitive pricing, and consistent quality. We work with a wide range of materials and can cut to your exact specifications from supplied artwork or technical drawings.</p>
+
+                <p>Based in Alnwick, we serve businesses in Morpeth, Amble, Rothbury, Ashington, Newcastle, and throughout the UK with collection and delivery options available.</p>
+
+                <h2>Materials We Cut</h2>
+                <p>Our CNC router can process a wide variety of sheet materials:</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <h4>Aluminium Composite (ACM/Dibond)</h4>
+                        <p>Lightweight, rigid panels ideal for outdoor signage and displays. Weather-resistant and easy to fix.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Acrylic (Perspex)</h4>
+                        <p>Clear or coloured acrylic sheets for illuminated signs, displays, and protective screens.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>MDF & Plywood</h4>
+                        <p>Timber-based boards for interior signage, exhibition stands, and structural components.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Foamex (PVC Foam Board)</h4>
+                        <p>Lightweight, cost-effective material for temporary signage and indoor displays.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Correx (Corrugated Plastic)</h4>
+                        <p>Durable, waterproof boards for estate agent signs, site boards, and temporary signage.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Solid Aluminium</h4>
+                        <p>Heavy-duty metal cutting for structural signage, brackets, and industrial components.</p>
+                    </div>
+                </div>
+
+                <h2>CNC Cutting Capabilities</h2>
+                <ul>
+                    <li><strong>Precision Cutting</strong> – Accurate to within 0.5mm for clean, professional edges</li>
+                    <li><strong>Custom Shapes</strong> – Cut to any shape from your artwork or technical drawings</li>
+                    <li><strong>Large Format</strong> – Bed size up to 3m x 2m for oversized panels</li>
+                    <li><strong>Batch Production</strong> – Consistent results for repeat orders and production runs</li>
+                    <li><strong>Edge Finishing</strong> – Smooth, clean edges ready for installation or further finishing</li>
+                    <li><strong>Drilling & Routing</strong> – Holes, slots, and recesses machined to specification</li>
+                </ul>
+
+                <h2>Common Applications</h2>
+                <p>Our CNC cutting service is used for a wide range of commercial projects:</p>
+                <ul>
+                    <li>Shop signs and fascia panels</li>
+                    <li>Built-up letters and logos</li>
+                    <li>Exhibition stands and display boards</li>
+                    <li>Point-of-sale displays and retail fixtures</li>
+                    <li>Architectural panels and cladding</li>
+                    <li>Wayfinding and directional signage</li>
+                    <li>Protective screens and partitions</li>
+                    <li>Custom brackets and mounting plates</li>
+                </ul>
+
+                <h2>How It Works</h2>
+                <p><strong>1. Send Your Artwork</strong> – Provide vector artwork (AI, PDF, DXF, DWG) or technical drawings with dimensions.</p>
+                <p><strong>2. Material Selection</strong> – Choose your material and thickness, or ask for our recommendation.</p>
+                <p><strong>3. Quote & Approval</strong> – We'll provide a detailed quote including material, cutting, and finishing costs.</p>
+                <p><strong>4. Production</strong> – Your panels are cut to specification with quality checks throughout.</p>
+                <p><strong>5. Collection or Delivery</strong> – Collect from our Alnwick workshop or arrange delivery across the UK.</p>
+
+                <h2>Why Choose NBNE for CNC Cutting?</h2>
+                <ul>
+                    <li>In-house manufacturing for fast turnaround (typically 3-5 working days)</li>
+                    <li>Experienced operators with 15+ years in signage fabrication</li>
+                    <li>Competitive pricing for single items and batch orders</li>
+                    <li>Quality materials sourced from trusted UK suppliers</li>
+                    <li>Free design advice and technical support</li>
+                    <li>Additional services available (printing, finishing, installation)</li>
+                </ul>
+
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <h4>What file formats do you accept?</h4>
+                        <p>We work with vector files (AI, EPS, PDF, DXF, DWG) and can also work from technical drawings or sketches. If you're unsure, send us what you have and we'll advise.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What is the maximum cutting size?</h4>
+                        <p>Our CNC bed size is 3m x 2m, which covers most signage and display applications. For larger projects, we can cut panels in sections and provide joining details.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How long does CNC cutting take?</h4>
+                        <p>Standard turnaround is 3-5 working days from artwork approval. Urgent jobs can often be accommodated—contact us to discuss your deadline.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can you supply the material as well?</h4>
+                        <p>Yes, we stock a range of commonly used materials and can source specialist materials to order. Material supply is included in our quotes.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do you offer finishing services?</h4>
+                        <p>Absolutely. We can print, laminate, paint, polish, or apply vinyl graphics to your cut panels. We also offer installation services for signage projects.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <h2>Ready to Start Your CNC Cutting Project?</h2>
+                    <p style="font-size: 1.125rem; color: #6b7280;">Send us your artwork for a fast, accurate quote</p>
+                    <a href="../index.html#contact" class="btn btn-primary" style="display: inline-block; margin-top: 20px; padding: 16px 48px; background: #3b82f6; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Send Your Artwork</a>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="cta-box">
+                    <h3>Get a Quote</h3>
+                    <p>Fast turnaround on CNC cutting projects</p>
+                    <a href="../index.html#contact" class="btn">Contact Us</a>
+                </div>
+
+                <div class="info-box">
+                    <h4>Quick Facts</h4>
+                    <ul>
+                        <li>✓ In-house CNC routing</li>
+                        <li>✓ 3-5 day turnaround</li>
+                        <li>✓ Bed size: 3m x 2m</li>
+                        <li>✓ Multiple materials</li>
+                        <li>✓ Precision: ±0.5mm</li>
+                        <li>✓ Single items or batches</li>
+                        <li>✓ Free design advice</li>
+                        <li>✓ UK-wide delivery</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Related Services</h4>
+                    <ul>
+                        <li><a href="metal-tags-asset-labels.html" style="color: #3b82f6; text-decoration: none;">Metal Tags & Labels</a></li>
+                        <li><a href="acrylic-panels-cut-to-size.html" style="color: #3b82f6; text-decoration: none;">Acrylic Panels</a></li>
+                        <li><a href="../index.html#services" style="color: #3b82f6; text-decoration: none;">All Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Coverage Area</h4>
+                    <ul>
+                        <li>Alnwick</li>
+                        <li>Morpeth</li>
+                        <li>Amble</li>
+                        <li>Rothbury</li>
+                        <li>Ashington</li>
+                        <li>Newcastle</li>
+                        <li>UK-wide delivery</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #1f2937; color: white; padding: 40px 20px; text-align: center;">
+        <div class="container">
+            <p><strong>NBNE Print & Sign</strong> | Northumberland's Commercial Signage Specialists</p>
+            <p style="margin-top: 10px;">
+                📧 <a href="mailto:hello@northbynortheast.co.uk" style="color: white; text-decoration: none;">hello@northbynortheast.co.uk</a> &nbsp;•&nbsp;
+                📞 <a href="tel:+441665606741" style="color: white; text-decoration: none;">01665 606 741</a> &nbsp;•&nbsp;
+                🌐 <a href="https://nbnesigns.co.uk" target="_blank" style="color: white; text-decoration: none;">nbnesigns.co.uk</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.875rem; opacity: 0.8;">
+                <a href="../index.html" style="color: white; text-decoration: none;">Home</a> | 
+                <a href="../index.html#services" style="color: white; text-decoration: none;">Services</a> | 
+                <a href="../index.html#contact" style="color: white; text-decoration: none;">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
